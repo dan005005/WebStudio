@@ -1,0 +1,64 @@
+.description__text {
+  display: block;
+  @include font(400, 14px, 24px);
+  color: var(--main-color);
+}
+
+// .description__item {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 30px;
+// }
+
+.description__list {
+  &::before {
+    margin-bottom: 30px;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 120px;
+    background-color: var(--backgronud-button-color);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 4px;
+  }
+
+  @each $pos, $des-icon in $desciption-icons {
+    &:nth-child(#{$pos}):before {
+      //  content: "";
+      background-image: url(../images/#{$des-icon}.svg);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title__text {
+   text-align: center;    
+  }
+  .description__text:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .description__text {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .description__item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .description__list {
+    width: 354px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .description__list {
+    width: 270px;
+  }
+}

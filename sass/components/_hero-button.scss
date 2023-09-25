@@ -1,0 +1,19 @@
+.hero-button {
+  min-width: 200px;
+  font-weight: 700;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  padding: 10px 32px;
+  color: var(--backgronud-button-color);
+  background-color: var(--current-color);
+  box-shadow: 0px 4px 4px var(--box-shadow-color);
+  outline: 0;
+  transition: var(--transition-background-color-func),
+    var(--transition-color-link-func);
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  color: var(--main-dark-color);
+  background-color: var(--button-hero-hover-color);
+}

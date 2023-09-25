@@ -1,0 +1,141 @@
+.header__container {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header__section {
+  border-bottom: 1px solid var(--header-border-color);
+}
+
+.nav__link {
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--secondary-color);
+  transition: var(--transition-color-link-func);
+
+  &:hover,
+  &:focus {
+    color: var(--current-color);
+  }
+}
+
+// .nav__item {
+//   padding-top: 32px;
+//   padding-bottom: 32px;
+// }
+
+.nav__item + .nav__item {
+  margin-left: 50px;
+}
+
+.nav__link_active {
+  color: var(--current-color);
+
+  &::after {
+    display: block;
+    content: "";
+    width: 101%;
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 28px;
+    background-color: var(--current-color);
+  }
+}
+
+.contact__link {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--main-color);
+  transition: var(--transition-color-link-func);
+
+  &:hover,
+  &:focus {
+    color: var(--current-color);
+  }
+}
+
+.mail__item {
+  fill: currentColor;
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+.tel__item {
+  fill: currentColor;
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.header__nav-site {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  padding-top: 32px;
+}
+
+@media screen and (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+
+  .nav__item {
+    display: none;
+  }
+  .contact__link {
+    display: none;
+  }
+}
+@media screen and (min-width: 480px) {
+  // .header__container {
+  //   width: 480px;
+
+  // }
+  .header__container {
+    width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__container {
+    display: flex;
+    width: 768px;
+  }
+
+  .nav__contact {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .contact__item + .contact__item {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header__container {
+    width: 1200px;
+  }
+
+  .nav__contact {
+    display: flex;
+    align-items: center;
+    // flex-direction: row;
+  }
+  .contact__item + .contact__item {
+    margin-left: 30px;
+    margin-top: 0;
+  }
+}

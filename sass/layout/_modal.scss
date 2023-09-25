@@ -1,0 +1,213 @@
+.modal {
+  position: absolute;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  overflow-y: auto;
+  top: 50%;
+  left: 50%;
+  background: var(--main-light-color);
+  box-shadow: var(--box-shadow-modal);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-close-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  transition: fill 0.25s linear, transform 0.25s linear;
+  transition-property: fill, transform;
+  transition-duration: 0.25s, 0.25s;
+  transition-timing-function: linear, linear;
+  transition-delay: 0s, 0s;
+
+  &:hover,
+  &:focus {
+    transform: rotate(1800deg);
+    fill: var(--current-color);
+  }
+}
+
+.backdrop {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: #00000033;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 250ms linear, visibility 250ms linear;
+  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
+.modal-form {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  font-family: "Roboto";
+  font-style: normal;
+  @include font(700, 20px, 30px);
+
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--secondary-color);
+}
+
+@media screen and (min-width: 480px) {
+  .modal {
+    width: 450px;
+    height: 609px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    height: 581px;
+  }
+  .modal-title {
+    @include font(700, 20px, 23px);
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .modal-form-check-description {
+    @include font(400, 12px, 14px);
+  }
+}
+.modal-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.modal-form-textarea {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: var(--transition-border-color-funk);
+
+  &:hover,
+  &:focus {
+    border-color: var(--current-color);
+    outline: none;
+  }
+}
+
+.modal-form-input-description {
+  display: block;
+  font-family: "Roboto";
+  @include font(400, 12px, 14px);
+  margin-bottom: 4px;
+  letter-spacing: 0.01em;
+}
+
+.modal-form-message {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  outline: none;
+  transition: var(--transition-border-color-funk);
+
+  &:hover,
+  &:focus {
+    border-color: var(--current-color);
+  }
+}
+
+.modal-form-input-wrapper {
+  position: relative;
+  display: block;
+}
+
+.modal-form-submit {
+  width: 200px;
+  height: 50px;
+  color: var(--main-light-color);
+  background-color: var(--current-color);
+  transition: var(--transition-background-color-func),
+    var(--transition-color-link-func);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:hover,
+  &:focus {
+    background-color: var(--button-hero-hover-color);
+    color: var(--main-dark-color);
+  }
+}
+
+.modal-form-check-link {
+  color: var(--current-color);
+  text-decoration: underline;
+}
+
+.modal-form-input-icon {
+  display: block;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-45%);
+  color: currentColor;
+  transition: var(--transition-fill-color);
+
+  .modal-form-input:hover + &,
+  .modal-form-input:focus + & {
+    fill: var(--current-color);
+  }
+}
+
+.modal-form-check-description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border: 2px solid var(--secondary-color);
+    border-radius: 2px;
+    margin-right: 7px;
+
+    .modal-form-check:checked + & {
+      border: none;
+      background-image: url(../images/check.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .modal-form-check:focus + & {
+      outline: 2px solid var(--current-color);
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.subscribe__email {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  height: 50px;
+  transition: var(--transition-border-color-funk);
+  padding: 15px 16px;
+
+  background-color: transparent;
+  font-size: 16px;
+  color: var(--main-light-color);
+
+  &:hover,
+  &:focus {
+    border-color: var(--current-color);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--footer-text-color);
+  }
+}
+
+.subscribe__text {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--main-light-color);
+}
+
+// .footer-subscribe {
+//   display: flex;
+//   flex-direction: row;
+// }
+
+.submit__icon {
+  margin-left: 10px;
+  fill: currentColor;
+}
+
+.submit__button {
+  display: flex;
+  align-items: center;
+  background-color: var(--current-color);
+  color: var(--main-light-color);
+  @include font(700, 16px, 30px);
+  text-align: center;
+  letter-spacing: 0.06em;
+  padding: 10px 28px;
+
+  &:hover,
+  &:focus {
+    background-color: var(--button-hero-hover-color);
+    color: var(--main-dark-color);
+  }
+}
+
+@media screen and (min-width: 480px) {
+  // .subscribe {
+  //   width: 480px;
+  // }
+
+  .subscribe__email {
+    width: 450px;
+  }
+}
+// @media screen and (min-width: 768px) {
+//   .subscribe {
+//     width: 768px;
+//   }
+//     // .subscribe__email {
+
+//     // }
+
+// }
+@media screen and (max-width: 1199px) {
+  .submit__button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe {
+    display: flex;
+  }
+  .subscribe__email {
+    width: 358px;
+    margin-right: 12px;
+  }
+  .subscribe__container {
+    margin-left: auto;
+  }
+}
